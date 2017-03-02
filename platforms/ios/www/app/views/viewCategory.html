@@ -1,0 +1,79 @@
+<section id="categoryContent_area" ng-swipe-right="actionSwipeRight($event)">
+<!-- 	<div class="row categoryInfo_bar1" fsm-sticky-header scroll-body="'#categoryContent_area'" scroll-stop="80"  ng-style="{'background-color': categoryColor}">
+		<div class="col-xs-4 navTxtTopPadding"><a  id="back_main" href="#home" ng-style="{'color': white}" >Back</a></div>
+		<div class="col-xs-4 navTxtTopPadding txtCenter"><span id="category_title" >{{categoryTitle}}</span></div>
+		<div class="col-xs-4 txtCenter">
+			<div class="btn-group btn-toggle pull-right imgbtn1">
+				<button class="btn btn-primary btn-xs active" id="show_images_cat" ng-click="showImages('show_images_cat', 'hide_images_cat')">Images</button>
+				<button class="btn btn-default btn-xs" id="hide_images_cat" ng-click="hideImages('hide_images_cat','show_images_cat')">Text</button>
+			</div>
+		</div>
+	</div> -->
+	<div class="categoryInfo_bar1"   ng-style="{'background-color': categoryColor}">
+	 	<div class="imageTextBtn1 textcenter"> <span id="category_title" >{{categoryTitle}}</span> </div>
+		<div class="imageTextBtn1 ">
+			<div class="btn-group btn-toggle pull-right">
+				<button class="btn btn-xs" ng-class="{'btn-primary active': !isTextOnly}" id="show_images_home" ng-click="toggleTextMode(false)">Images</button>
+				<button class="btn btn-xs" ng-class="{'btn-primary active': isTextOnly}" id="hide_images_home" ng-click="toggleTextMode(true)" >Text</button>
+			</div>
+		</div>
+		<div class="imageTextBtn1 backbtn">
+				<a  id="back_main" href="" ng-click="backBtn()" ng-style="{'color': white}" >
+				Back</a>
+			</div>
+	</div>
+	<div class="clearFix"></div>
+	
+	
+	<!-- <div class="row categoryInfo_bar"  ng-style="{'background-color': categoryColor}">
+		<div class="col-sm-4 " >
+			<div class="col-sm-12" >
+				<span id="category_title" >{{categoryTitle}}</span>
+			</div>
+		</div>
+	</div>
+	 -->
+	<div class="row" id="showImages"  style="margin:0px;">
+		<div class="form-group">
+			<div class="col-xs-12 col-md-6 col-sm-6 col-lg-6 categoryDataandTime" style="padding: 5px;">
+				<p ng-show="lastUpdatedTime != null" id="updateDateandTime">Last Updated on {{lastUpdatedTime}}</p>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div class="container-fluid1">
+		<div class="row" id="newsContent_area" > 
+			<div ng-if="noData == true" class="nodata">No Data Available. Please check the internet connect and try again.</div>
+			<div ng-repeat="data in categoryData" ng-swipe-left="actionSwipeLeft($event, data, $index)" class="col-xs-6 col-sm-4 col-md-4 col-lg-3 thumb" >
+				<div class="panel panel-default flex-col" ng-style="{'border-color': categoryColor}" ng-click="selectNews(data,$index)">
+					<div class="panel-heading">
+						<div class="image_categories">
+							<h4 ng-if="isTextOnly" class="news-title text-left cat-para">{{data.description}}
+							</h4>
+							<img ng-if="!isTextOnly" class="news_images img-responsive" ng-src="{{data.image.sort}}" />
+							
+						</div>
+					</div>
+					<div class="panel-body flex-grow newscontent" dotdotdot >
+						<!--<div class="news_caption ">-->
+							<!--<span class="news_categories_title" data-ellipsis data-ellipsis-symbol="&#45;&#45;">-->
+							<p class="title-news-item">{{data.title}}</p>
+							<!--</span>-->
+						<!--</div>-->
+					</div>
+				</div>
+				
+			</div>
+			<!-- <div ng-if="!noData" id="btnViewMore"><button class="btn btn-primary width100" ng-click="viewMore()">View More</button></div> -->
+		</div>
+	</div>
+</section>
+<script>
+/*  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');*/
+
+  
+</script>
