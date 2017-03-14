@@ -43,28 +43,28 @@
     },
     "installed_plugins": {
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.nexark.News_Yogi"
+            "PACKAGE_NAME": "com.innovation.NewsYogi"
         },
         "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.nexark.News_Yogi"
+            "PACKAGE_NAME": "com.innovation.NewsYogi"
         },
         "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.nexark.News_Yogi"
+            "PACKAGE_NAME": "com.innovation.NewsYogi"
         },
         "cordova-plugin-progress": {
-            "PACKAGE_NAME": "com.nexark.News_Yogi"
+            "PACKAGE_NAME": "com.innovation.NewsYogi"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.nexark.News_Yogi"
+            "PACKAGE_NAME": "com.innovation.NewsYogi"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.nexark.News_Yogi"
+            "PACKAGE_NAME": "com.innovation.NewsYogi"
         },
         "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.nexark.News_Yogi"
+            "PACKAGE_NAME": "com.innovation.NewsYogi"
         },
         "it.mobimentum.phonegapspinnerplugin": {
-            "PACKAGE_NAME": "com.nexark.News_Yogi"
+            "PACKAGE_NAME": "com.innovation.NewsYogi"
         }
     },
     "dependent_plugins": {},

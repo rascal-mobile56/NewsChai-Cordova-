@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.nexark.News_Yogi;
+package com.nexark.NewsYogi;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
