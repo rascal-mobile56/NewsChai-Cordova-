@@ -7,6 +7,7 @@ yogiApp.directive("dirHeader", ["$location", "$rootScope", "$interval", "$templa
             templateUrl: "app/views/viewHeader.html",
             controller: function($scope, $location, $rootScope, yogiService, config) {
                 $scope.init = function() {
+                    var menu = $('.left-menu').sliiide({place: 'left', exit_selector: '.left-exit', toggle: '#nav-icon2'});
                     $scope.headerData = [];
                     $scope.moreCategories = [];
                     $scope.getHeaderData();

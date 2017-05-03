@@ -9,8 +9,11 @@
 			</div>
 		</div>
 	</div> -->
-	<div class="categoryInfo_bar1"   ng-style="{'background-color': categoryColor}">
-	 	<div class="imageTextBtn1 textcenter"> <span id="category_title" >{{categoryTitle}}</span> </div>
+	<div class="categoryInfo_bar1"   >
+	 	<div class="imageTextBtn1 textcenter">
+            <span id="category_title" ng-style="{'color': categoryColor}">{{categoryTitle}}</span>
+            <!--<span id="category_title" ng-style="{'background-color': categoryColor}">{{categoryTitle}}</span>-->
+        </div>
 		<div class="imageTextBtn1 ">
 			<div class="btn-group btn-toggle pull-right">
 				<button class="btn btn-xs" ng-class="{'btn-primary active': !isTextOnly}" id="show_images_home" ng-click="toggleTextMode(false)">Images</button>
@@ -18,8 +21,7 @@
 			</div>
 		</div>
 		<div class="imageTextBtn1 backbtn">
-				<a  id="back_main" href="" ng-click="backBtn()" ng-style="{'color': white}" >
-				Back</a>
+				<a  id="back_main" href="" ng-click="backBtn()" ng-style="{'color': white}"></a>
 			</div>
 	</div>
 	<div class="clearFix"></div>

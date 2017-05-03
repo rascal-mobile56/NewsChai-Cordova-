@@ -1,6 +1,7 @@
 yogiApp.controller('ctrlMain', ["$scope", "$location", "$rootScope", "$routeParams", "yogiService", "config","$timeout",'$templateCache','ngProgress',
     function($scope, $location, $rootScope, $routeParams, yogiService, config, $timeout,$templateCache, ngProgress) {
 
+
         $scope.moduleName = 'home';
         $scope.init = function() {            
             $scope.isMainScreen = true;

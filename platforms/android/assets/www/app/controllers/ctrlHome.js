@@ -3,6 +3,7 @@ yogiApp.controller('ctrlHome', ['$q', "$scope", "$location", "$rootScope", "yogi
         /*var serviceTimer;*/
         var viewportwidth;
         var viewportheight;
+
         $scope.slickConfig = {
             dots: false,
             autoplay: true,
@@ -20,6 +21,7 @@ yogiApp.controller('ctrlHome', ['$q', "$scope", "$location", "$rootScope", "yogi
         $rootScope.isTextOnly = yogiService.getViewMode();
         
         $scope.init = function() {
+            $("#custom-navbar").css('display','block');
             yogiService.setCurrentModule($scope.moduleName);
             yogiService.setSelectedCategory('BREAKING');
             //$rootScope.serviceTimer="";

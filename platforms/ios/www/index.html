@@ -5,7 +5,7 @@
 	<meta name="description" content="Newsyogi has latest India news by category that has user-friendly viewing experience of either Image or Text version.">
 	<meta name="keywords" content="news, India news, Desi news, south asia news, asia news, south india news, india breaking news, technology news, bollywood news, all india news,news india, india, india free, india food, india jobs, NRI news, NRI, overseas india, overseas indian, india real estate, real estate, india travel, india health, health, travel, desi food, cricket, india cricket">
 	<meta name="author" content="NewsYogi">
-	<title>NewsYogi</title>
+	<title>NewsChai</title>
 	<link rel="shortcut icon" href="images/ico/favico.ico">
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -24,13 +24,14 @@
 	<link href="css/prettyPhoto.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/flexslider.css" media="screen"/>
 	<link href="css/animate.css" rel="stylesheet">
+	<link href="css/nav-icon.css" rel="stylesheet">
 	<!-- Library CSS  Ends-->
 	<!-- Custom CSS -->
 	<link id="pagestyle" rel="stylesheet" type="text/css" href="css/theme2.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
 	<link href="css/media-slider.css" rel="stylesheet">
 	<!-- Custom CSS  Ends-->
-	
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
@@ -47,14 +48,68 @@
 		}
 	</script>
 </head>
-<body ng-app="yogiApp" ng-controller="ctrlMain">
+<body ng-app="yogiApp" ng-controller="ctrlMain" class="flex-center-wrapper flex-column">
 	<!-- Header -->
 	<dir-header></dir-header>
+	<!-- <div class="sliding-menu flex-center-wrapper flex-column left-menu">
+        <ul>
+            <li>
+                <span ng-style></span>
+                <a href="#">Most Popular</a>
+            </li>
+            <li>
+                <span></span>
+                <a href="#">India</a>
+            </li>
+            <li>
+                <span></span>
+                <a href="#">Trending World</a>
+            </li>
+            <li>
+                <span></span>
+                <a href="#">Most Popular</a>
+            </li>
+            <li>
+                <span></span>
+                <a href="#">India</a>
+            </li>
+            <li>
+                <span></span>
+                <a href="#">Trending World</a>
+            </li>
+            <li>
+                <span></span>
+                <a href="#">Most Popular</a>
+            </li>
+            <li>
+                <span></span>
+                <a href="#">India</a>
+            </li>
+            <li>
+                <span></span>
+                <a href="#">Trending World</a>
+            </li>
+            <li>
+                <span></span>
+                <a href="#">Most Popular</a>
+            </li>
+            <li>
+                <a href="#">India</a>
+            </li>
+            <li>
+                <span></span>
+                <a href="#">Trending World</a>
+            </li>
+        </ul>
+        <span class="menu-logo"></span>
+        <span class="sliiider-exit exit left-exit">&#215</span>
+	</div> -->
+
 	<!-- Header Ends Here -->
-	
-	
+
+
 	<div ng-view>
-		
+
 	</div>
 	<!-- Footer -->
 	<!-- <dir-footer></dir-footer> -->
@@ -94,6 +149,7 @@
 <script src="libs/localforage.nopromises.js"></script>
 <!--Library JS Ends-->
 <!--Custom JS-->
+<script src="js/sliiide.js"></script>
 <script src="js/index-slider.js"></script>
 <script src="js/initOptions.js"></script>
 <script src="js/main.js"></script>

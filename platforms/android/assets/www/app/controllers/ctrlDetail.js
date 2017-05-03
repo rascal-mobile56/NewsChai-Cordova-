@@ -1,7 +1,8 @@
 yogiApp.controller('ctrlDetail', ["$scope", "$location", "$rootScope", "yogiService", "config", '$interval', '$routeParams', 'ngProgress', '$timeout','$route','$sce', 'feed',
-    function($scope, $location, $rootScope, yogiService, config, $interval, $routeParams, ngProgress, $timeout, $route, $sce, feed) {
+    function($scope, $location, $rootScope, yogiService, config, $interval, $routeParams, ngProgress, $timeout, $route, $sce, feed, $cordovaInAppBrowser) {
         var viewportwidth;
         var viewportheight;
+        $scope.viewHome = false;
         $scope.moduleName = 'detail';
         $scope.shareToggle = false;
         $scope.viewMode = "minimize";
@@ -74,6 +75,7 @@ yogiApp.controller('ctrlDetail', ["$scope", "$location", "$rootScope", "yogiServ
         };
         $scope.init = function() {
             console.log('feed', feed);
+            $("#custom-navbar").css('display','none');
             yogiService.setCurrentModule($scope.moduleName);
             ngProgress.start();
             $scope.detailsData = feed;//yogiService.getCurrentData();
@@ -177,6 +179,30 @@ yogiApp.controller('ctrlDetail', ["$scope", "$location", "$rootScope", "yogiServ
             }, 0);
             //$rootScope.$broadcast("changeroute", $scope.category);
         };
+
+        var speakSelect = function(value){
+
+            TTS
+                .speak({
+                    text: value,
+                    locale: 'en-GB',
+                    rate: 1.5
+                }, function () {
+                    console.log('success');
+                }, function (reason) {
+                    console.log(reason);
+                });
+        };
+
+        $scope.selectSpeaker = function(){
+
+            speakSelect($scope.newsContent);
+
+        };
+
+
+
+
         var timeShowShare;
         $scope.showShare = function (show, event) {
             event.stopPropagation();
@@ -206,6 +232,7 @@ yogiApp.controller('ctrlDetail', ["$scope", "$location", "$rootScope", "yogiServ
         }
 
         $scope.actionSwipeRight = function(event) {
+            speakSelect("");
             if(event && event.hasOwnProperty('target') && !!$(event.target).closest('.slick-slider').length){
                 event.preventDefault();
                 return;
@@ -224,6 +251,7 @@ yogiApp.controller('ctrlDetail', ["$scope", "$location", "$rootScope", "yogiServ
                 return;
             }
             if ($scope.viewMode === 'full') {
+                speakSelect("");
                 var url = ($scope.videoLink) ? $scope.videoLink : $scope.sourceLink;
                 if(url){
                     var ref = cordova.InAppBrowser.open(url, '_blank');                    
@@ -234,16 +262,35 @@ yogiApp.controller('ctrlDetail', ["$scope", "$location", "$rootScope", "yogiServ
         }
 
         $scope.actionSwipeUp = function(){
+            speakSelect("");
             if ($scope.viewMode === 'minimize') {
                 $scope.changeNews('next');
             }
         }
 
         $scope.actionSwipeDown = function(){
+            speakSelect("");
             if ($scope.viewMode === 'minimize') {
                 $scope.changeNews('prev');
             }
-        }
+        };
+
+        var options = {
+            location: 'no',
+            clearcache: 'no',
+            toolbar: 'yes'
+        };
+
+
+        $scope.goAppstore = function()
+        {
+            var ref1 = cordova.InAppBrowser.open( 'https://www.google.com', '_blank', options);
+        };
+        $scope.goPlaystore = function()
+        {
+            var ref2 = cordova.InAppBrowser.open('https://www.google.com', '_blank', options);
+        };
+
 
 
         $scope.testShare = function(message, img, link){

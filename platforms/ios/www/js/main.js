@@ -1,5 +1,5 @@
 	$("document").ready(function() {
-
+		// var menu = $('.left-menu').sliiide({place: 'left', exit_selector: '.left-exit', toggle: '#nav-icon2'});
 	    var viewportwidth;
 	    var viewportheight;
 
@@ -27,15 +27,15 @@
 
 	    /*function squareThis (element, ratio, minLimit)
 			{
-				
+
 			    // First of all, let's square the element
 			    square(ratio, minLimit);
-			 
+
 			    // Now we'll add an event listener so it happens automatically
 			    window.addEventListener('resize', function(event) {
 				square(ratio, minLimit);
 			    });
-			    
+
 			    // This is just an inner function to help us keep DRY
 			    function square(ratio, minLimit)
 			    {
@@ -48,7 +48,7 @@
 				    minLimit = 0;
 				}
 				var viewportWidth = window.innerWidth;
-				
+
 				if(viewportWidth >= minLimit)
 				{
 				    var newElementHeight = $(element).width() * ratio;
@@ -78,7 +78,7 @@
 
 	    });
 	    /*function checkimage() {
-			
+
 		if ($('.news_images', this).attr('src') == '') {
 			($('.news_images', this).attr('src') != '.../images/logo.jpg')
 		}
@@ -156,8 +156,8 @@
       		e.preventDefault();
       		$('body').removeClass('nav-expanded');
       	});
-      	
-      	
+
+
       	// Initialize navgoco with default options
         $(".main-menu").navgoco({
             caret: '<span class="caret"></span>',

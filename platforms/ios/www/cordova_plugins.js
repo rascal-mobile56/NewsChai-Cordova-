@@ -51,6 +51,14 @@ module.exports = [
         ]
     },
     {
+        "id": "cordova-plugin-tts.tts",
+        "file": "plugins/cordova-plugin-tts/www/tts.js",
+        "pluginId": "cordova-plugin-tts",
+        "clobbers": [
+            "TTS"
+        ]
+    },
+    {
         "id": "cordova-plugin-x-socialsharing.SocialSharing",
         "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
         "pluginId": "cordova-plugin-x-socialsharing",
@@ -75,6 +83,7 @@ module.exports.metadata =
     "cordova-plugin-network-information": "1.3.1",
     "cordova-plugin-progress": "0.3.0",
     "cordova-plugin-splashscreen": "4.0.0",
+    "cordova-plugin-tts": "0.2.3",
     "cordova-plugin-whitelist": "1.3.0",
     "cordova-plugin-x-socialsharing": "5.1.3",
     "it.mobimentum.phonegapspinnerplugin": "1.2.1"

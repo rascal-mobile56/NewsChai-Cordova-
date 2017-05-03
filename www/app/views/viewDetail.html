@@ -4,8 +4,10 @@
 	ng-swipe-up="actionSwipeUp()" 
 	ng-swipe-down="actionSwipeDown()"
 	ng-click="showShare(false, $event)"> <!--  -->
-	<div class="categoryInfo_bar1" ng-style="{'background-color': detailsData.colorCode}" >
-		<div class="imageTextBtn1 textcenter "> <span id="category_title" >{{categoryTitle}}</span> </div>
+	<div class="categoryInfo_bar1"  >
+		<div class="imageTextBtn1 textcenter ">
+            <span id="category_title" ng-style="{'color': detailsData.colorCode}">{{categoryTitle}}</span>
+        </div>
 		<div class="imageTextBtn1" >
 			<div class="btn-group btn-toggle pull-right">
 				<button class="btn btn-xs" ng-class="{'btn-primary active': !isTextOnly}" id="show_images_home" ng-click="toggleTextMode(false)">Images</button>
@@ -13,25 +15,23 @@
 			</div>
 		</div>
 		<div class="imageTextBtn1 backbtn">
-				<a  id="back_main"  ng-click="actionSwipeRight()" ng-style="{color:white}" >
-				Back</a>
-			</div>
+			<a  id="back_main"  ng-click="actionSwipeRight()"></a>
+        </div>
 	</div>
 		<div class="panel panel-default flex-col" ng-class="{'mode-minimize': viewMode == 'minimize', 'mode-full': viewMode == 'full'}" ng-style="{'border-color': detailsData.colorCode}">
 
-			<div ng-if="noData == true" class="nodata">No Data Available. Please try again.</div>
-			<div class="panel-heading" id="detail_heading"  >
-				<div class="row">
-					<div class="col-xs-12 col-sm-12  col-md-12 col-lg-12 " style="color: #000;">
-						<h4 ng-cloak class="detailPageTitle">{{title}}</h4>
-					</div>
+			<!--<div class="panel-heading" id="detail_heading"  >-->
+				<!--<div class="row">-->
+					<!--<div class="col-xs-12 col-sm-12  col-md-12 col-lg-12 " style="color: #000;">-->
+						<!--<h4 ng-cloak class="detailPageTitle">{{title}}</h4>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
 
-				</div>
-			</div>
-
-			<div class="panel-body content-details" id="detail_content" >
+			<div class="content-details" id="detail_content" >
+                <!--<div class="panel-body content-details" id="detail_content" >-->
 				<div class="row">
-					<div class="col-sm-11 col-md-11 col-lg-12"  id="category_image"  >
+					<div class=""  id="category_image"  >
 						<div ng-if="!slides" class="container-image">
 							<img ng-if="!isTextOnly" class=" img-responsive detail-images" ng-src="{{imageLink || '//:0' }}" rel="prettyPhoto" />
 							<div  ng-show="videoLink" class="overlay-videolink" ng-click="showModal()">
@@ -49,11 +49,24 @@
 						</slick>
 					</div>
 				</div>
-				<div class="row">	
+                <div ng-if="noData == true" class="nodata">No Data Available. Please try again.</div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12  col-md-12 col-lg-12 " style="color: #000;">
+                        <h4 ng-cloak class="detailPageTitle">{{title}}</h4>
+                    </div>
+                </div>
+				<div class="row">
 					<div class="col-sm-11 col-md-11 col-lg-12" style="padding-top:10px;" >
 						<p ng-cloak>{{newsContent}} </p>
 					</div>
 				</div>
+                <div class="row">
+                    <div class="col-sm-11 col-md-11 col-lg-12" style="padding-top:10px;" >
+                        <img class="logo-blue" src="images/logo-blue.png">
+                        <img class="logo-store" src="images/appstore.png" ng-click="goAppstore()">
+                        <img class="logo-store" src="images/googleplay.png" ng-click="goPlaystore()">
+                    </div>
+                </div>
 				<hr>
 				<div class="row">
 					<div class=" panel-date ">
@@ -69,11 +82,16 @@
 
 				<div class="view-more-block">
 					<div class="row">
-						<div class="col-xs-offset-4 col-xs-4 text-center">
+                        <div class="col-xs-4 text-left">
+                            <div class="share-toggle" ng-click="selectSpeaker()"><i class="fa fa-volume-up" aria-hidden="true"></i></div>
+                        </div>
+						<div class="col-xs-4 text-center">
 							<i class="fa fa-arrow-circle-o-right more-icon" aria-hidden="true" ng-click="changeViewMode('full')"></i>
 						</div>
 						<div class="col-xs-4 pull-right share-btn-container text-right">
-							<div class="share-toggle" ng-click="showShare(true, $event)"><i class="fa fa-share-square-o" aria-hidden="true"></i></div>
+							<div class="share-toggle" ng-click="showShare(true, $event)">
+                                <i class="fa fa-share-square-o" aria-hidden="true"></i>
+                            </div>
 						</div>
 					</div>					
 				</div>

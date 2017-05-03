@@ -22,6 +22,9 @@
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.innovation.NewsYogi"
         },
+        "cordova-plugin-tts": {
+            "PACKAGE_NAME": "com.innovation.NewsYogi"
+        },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.innovation.NewsYogi"
         },

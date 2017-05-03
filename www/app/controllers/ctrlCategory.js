@@ -3,6 +3,7 @@ yogiApp.controller('ctrlCategory', ["$scope", "$location", "$rootScope", "yogiSe
        /* var serviceTimer;*/
         var viewportwidth;
         var viewportheight;
+
         $scope.moduleName = 'category';
         $scope.noData = true;
         $rootScope.isTextOnly = yogiService.getViewMode();
@@ -17,6 +18,11 @@ yogiApp.controller('ctrlCategory', ["$scope", "$location", "$rootScope", "yogiSe
 
         $scope.init = function() {
             $scope.noData = true;
+            $("#custom-navbar").css('display','block');
+            $(".headerbar").css('display','none');
+            $(".custom-header").css('background-color','transparent)');
+
+
             yogiService.setSelectedCategoryData(false);
             var hideSpinnerInterval = $interval(function(){
                 hideSpinner();
