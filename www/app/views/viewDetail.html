@@ -10,15 +10,15 @@
         </div>
 		<div class="imageTextBtn1" >
 			<div class="btn-group btn-toggle pull-right">
-				<button class="btn btn-xs" ng-class="{'btn-primary active': !isTextOnly}" id="show_images_home" ng-click="toggleTextMode(false)">Images</button>
-				<button class="btn btn-xs" ng-class="{'btn-primary active': isTextOnly}" id="hide_images_home" ng-click="toggleTextMode(true)" >Text</button>
+				<button class="btn btn-xs" ng-class="{'btn-primary active': !isTextOnly}" id="show_images_home" ng-click="toggleTextMode(false)">IMG</button>
+				<button class="btn btn-xs" ng-class="{'btn-primary active': isTextOnly}" id="hide_images_home" ng-click="toggleTextMode(true)" >TXT</button>
 			</div>
 		</div>
 		<div class="imageTextBtn1 backbtn">
 			<a  id="back_main"  ng-click="actionSwipeRight()"></a>
         </div>
 	</div>
-		<div class="panel panel-default flex-col" ng-class="{'mode-minimize': viewMode == 'minimize', 'mode-full': viewMode == 'full'}" ng-style="{'border-color': detailsData.colorCode}">
+		<div class="panel panel-default flex-col" ng-class="{'mode-minimize': viewMode == 'minimize', 'mode-full': viewMode == 'full'}" ng-style="{'border-color': detailsData.colorCode}" style="border-bottom-width: 5px;">
 
 			<!--<div class="panel-heading" id="detail_heading"  >-->
 				<!--<div class="row">-->

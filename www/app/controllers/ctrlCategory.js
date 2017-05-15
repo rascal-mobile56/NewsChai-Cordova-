@@ -17,12 +17,10 @@ yogiApp.controller('ctrlCategory', ["$scope", "$location", "$rootScope", "yogiSe
         }
 
         $scope.init = function() {
+
             $scope.noData = true;
             $("#custom-navbar").css('display','block');
-            $(".headerbar").css('display','none');
-            $(".custom-header").css('background-color','transparent)');
-
-
+            $('.refresh-button').css('display', 'none');
             yogiService.setSelectedCategoryData(false);
             var hideSpinnerInterval = $interval(function(){
                 hideSpinner();
@@ -149,26 +147,6 @@ yogiApp.controller('ctrlCategory', ["$scope", "$location", "$rootScope", "yogiSe
             $rootScope.isTextOnly = mode;
             yogiService.setViewMode($rootScope.isTextOnly);
         }
-
-/*        $scope.viewMore = function() {
-            //
-            $scope.initialCategorylimit += 16;
-           // $scope.checkViewOptions();
-            $scope.isTextOnly = yogiService.getViewMode();
-            if($scope.categoryData.length <= $scope.initialCategorylimit ){
-               $('#btnViewMore').hide(); 
-            }
-            $timeout(function() {
-                if ($scope.isTextOnly) {
-                    $(".news-title").show();
-                    $(".news_images").hide();
-                }else{
-                    $(".news-title").hide();
-                    $(".news_images").show();
-                }
-            }, 200);
-           // $(".news_images").hide();
-        };*/
 
         $scope.backBtn = function(){
             console.log('backBtn!!!!');

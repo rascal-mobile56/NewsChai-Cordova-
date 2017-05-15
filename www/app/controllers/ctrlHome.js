@@ -3,6 +3,7 @@ yogiApp.controller('ctrlHome', ['$q', "$scope", "$location", "$rootScope", "yogi
         /*var serviceTimer;*/
         var viewportwidth;
         var viewportheight;
+        $rootScope.menu
 
         $scope.slickConfig = {
             dots: false,
@@ -21,10 +22,9 @@ yogiApp.controller('ctrlHome', ['$q', "$scope", "$location", "$rootScope", "yogi
         $rootScope.isTextOnly = yogiService.getViewMode();
         
         $scope.init = function() {
-            $("#custom-navbar").css('display','block');
-            $(".headerbar").css('display','block');
-            $(".custom-header").css('background-color','rgba(102, 102, 102, 0.3)');
 
+            $("#custom-navbar").css('display','block');
+            $('.refresh-button').css('display','block');
             yogiService.setCurrentModule($scope.moduleName);
             yogiService.setSelectedCategory('BREAKING');
             //$rootScope.serviceTimer="";
@@ -178,6 +178,7 @@ yogiApp.controller('ctrlHome', ['$q', "$scope", "$location", "$rootScope", "yogi
             //alert("No Data available. Please try again.");
         };
         $scope.selectNewsItem = function (data, index) {
+
             if(!yogiService.getDataCategory(yogiService.getSelectedCategory())){
                 return;
             }
@@ -188,7 +189,7 @@ yogiApp.controller('ctrlHome', ['$q', "$scope", "$location", "$rootScope", "yogi
             yogiService.setCurrentData(data);
             $rootScope.$broadcast("openDetails", data)
         };
-        $scope.selectNews = function(data, index) {
+        $scope.selectNews = function(data, index) {;
             if(typeof spinnerplugin !== 'undefined'){
                 spinnerplugin.show();
             }

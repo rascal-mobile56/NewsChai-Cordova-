@@ -584,6 +584,13 @@ footer {
     position: absolute;
     width: 100%;
 }
+.imageTextBtn2 {
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom:calc(100vh - 40px);
+}
+
 .backbtn {
     margin-left: 5px;
 }
@@ -627,8 +634,10 @@ footer {
         font-size: 16px;
         font-weight: bold;
         /*margin-left: 15px;*/
-
+        width: 100%;
         color: #fff;
+        display: block;
+        padding: 0px;
     }
     .col-xs-3 {
         width: 36%;
@@ -1060,12 +1069,11 @@ footer {
 .categoryInfo_bar1 {
     background-color: rgba(102, 102, 102, 0.3);
     margin-left: 0px;
-    /*margin-top: -10px;*/
     height: 45px;
     padding-top: 8px;
     display: block;
-    /*z-index: 100!important*/
 }
+
 #ngProgress-container {
     display: none;
     position: fixed;
@@ -1505,6 +1513,13 @@ footer {
     top: 0px;
     height: 55px;
 }
+.categoryInfo_bar2{
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    height: 20px;
+}
 .share-btn-container{
     padding: 0 15px 0 0;
     text-align: right;
@@ -1554,6 +1569,7 @@ footer {
     height: 100vh;
     margin-bottom: 0;
     position: relative;
+    /*border-bottom-width: 5px;*/
     }
 .mode-minimize .view-more-block {
     display: block;

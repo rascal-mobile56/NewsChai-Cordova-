@@ -6,8 +6,13 @@ yogiApp.directive("dirHeader", ["$location", "$rootScope", "$interval", "$templa
             scope: {},
             templateUrl: "app/views/viewHeader.html",
             controller: function($scope, $location, $rootScope, yogiService, config) {
+
+                $rootScope.menu;
+
                 $scope.init = function() {
-                    var menu = $('.left-menu').sliiide({place: 'left', exit_selector: '.left-exit', toggle: '#nav-icon2'});
+
+                    $rootScope.menu = $('.left-menu').sliiide({place: 'left', exit_selector: '.left-exit', toggle: '#nav-icon2'});
+
                     $scope.headerData = [];
                     $scope.moreCategories = [];
                     $scope.getHeaderData();
@@ -38,6 +43,8 @@ yogiApp.directive("dirHeader", ["$location", "$rootScope", "$interval", "$templa
                 };
 
                 $scope.selectCategory = function(data) {
+                    $rootScope.menu.deactivate();
+
                     if(typeof window.spinnerplugin !== 'undefined'){
                         window.spinnerplugin.show();
                     }
