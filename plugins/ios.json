@@ -8,31 +8,31 @@
     },
     "installed_plugins": {
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.innovation.NewsYogi"
+            "PACKAGE_NAME": "com.innovation.newschai"
         },
         "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.innovation.NewsYogi"
+            "PACKAGE_NAME": "com.innovation.newschai"
         },
         "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.innovation.NewsYogi"
+            "PACKAGE_NAME": "com.innovation.newschai"
         },
         "cordova-plugin-progress": {
-            "PACKAGE_NAME": "com.innovation.NewsYogi"
+            "PACKAGE_NAME": "com.innovation.newschai"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.innovation.NewsYogi"
+            "PACKAGE_NAME": "com.innovation.newschai"
         },
         "cordova-plugin-tts": {
-            "PACKAGE_NAME": "com.innovation.NewsYogi"
+            "PACKAGE_NAME": "com.innovation.newschai"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.innovation.NewsYogi"
+            "PACKAGE_NAME": "com.innovation.newschai"
         },
         "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.innovation.NewsYogi"
+            "PACKAGE_NAME": "com.innovation.newschai"
         },
         "it.mobimentum.phonegapspinnerplugin": {
-            "PACKAGE_NAME": "com.innovation.NewsYogi"
+            "PACKAGE_NAME": "com.innovation.newschai"
         }
     },
     "dependent_plugins": {}
