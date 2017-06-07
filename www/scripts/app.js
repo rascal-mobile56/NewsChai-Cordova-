@@ -110,9 +110,53 @@ yogiApp.config(['$routeProvider', '$httpProvider','$locationProvider',
                 }
             }
         }).
+        when('/tutorial', {
+            templateUrl: 'app/views/viewTutorial.html',
+            controller: 'ctrlTutorial',
+            resolve: {
+                homeData: function ($q, yogiService, config) {
+                    function renderLocalData() {
+                        var localdata;
+                        yogiService.getLocalData(moduleName)
+                            .then(function (data) {
+                                localdata = data;
+                                if(localdata) {
+                                    deferred.resolve(localdata);
+                                } else {
+                                    getHomepagedata();
+                                }
+                            });
+                    }
+
+                    function getHomepagedata() {
+                        var url = config.RESTURLS.HOST.BASE + config.RESTURLS.SUBURL.HOME;
+                        yogiService.getData(url, "", "", function(response){
+                            deferred.resolve(response);
+                        }, function(){
+                            deferred.resolve(null);
+                        });
+                    }
+
+                    var deferred = $q.defer()
+                    var moduleName = 'home';
+                    yogiService.setCurrentModule(moduleName);
+                    yogiService.setSelectedCategory('BREAKING');
+                    if (Date.now() < yogiService.getTimeExpired(moduleName)){
+                        renderLocalData();
+                    } else {
+                        getHomepagedata();
+                    }
+                    return deferred.promise;
+                }
+            }
+        }).
         otherwise({
-            redirectTo: '/home'
+            redirectTo: '/tutorial'
         });
+        // otherwise({
+        //    redirectTo: '/home'
+        // });
+        
         $httpProvider.defaults.useXDomain = true;
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
     }

@@ -41,12 +41,7 @@ yogiApp.controller('ctrlCategory', ["$scope", "$location", "$rootScope", "yogiSe
             }
             hideSpinner();
 
-/*            if (Date.now() < yogiService.getTimeExpired($routeParams.catName)){
-                $scope.renderLocalData();
-            } else {
-                $scope.getcategoryData();
-            }*/
-            $scope.categoryTitle = yogiService.getSelectedCategoryTitle()
+            $scope.categoryTitle = yogiService.getSelectedCategoryTitle();
             $scope.getViewportData();
             $scope.itemIndex = yogiService.getCategoryIndex();
             if($scope.itemIndex) { 
@@ -111,6 +106,7 @@ yogiApp.controller('ctrlCategory', ["$scope", "$location", "$rootScope", "yogiSe
 
             $scope.lastUpdatedTime = moment(result.lastupdated).tz('Asia/Kolkata').format('DD MMMM gggg hh:mm A z');
             $scope.categoryData = result.feed;
+            console.log(result.feed.length);
             $scope.categoryTitle = result.displayName;
             $scope.categoryColor = result.colorCode;
             $interval.cancel($rootScope.serviceTimer);

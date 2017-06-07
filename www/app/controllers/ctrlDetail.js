@@ -2,6 +2,8 @@ yogiApp.controller('ctrlDetail', ["$scope", "$location", "$rootScope", "yogiServ
     function($scope, $location, $rootScope, yogiService, config, $interval, $routeParams, ngProgress, $timeout, $route, $sce, feed, $cordovaInAppBrowser) {
         var viewportwidth;
         var viewportheight;
+        console.log('length='+localStorage.getItem('length'));
+        var length = parseInt(localStorage.getItem('length'));
         $scope.viewHome = false;
         $scope.moduleName = 'detail';
         $scope.shareToggle = false;
@@ -55,15 +57,25 @@ yogiApp.controller('ctrlDetail', ["$scope", "$location", "$rootScope", "yogiServ
             var id = $scope.detailsData.id;
             var localdata = yogiService.getDataCategory(yogiService.getSelectedCategory());
             var currentIndex = yogiService.getIndexNews(id);
+
             var newIndex;
             if (nav == 'next' && yogiService.checkExistNews(id).next){
+
                 newIndex = currentIndex + 1;
-                $scope.selectNews(localdata.feed[newIndex], newIndex);
+
+            } else if(nav == 'next' && !yogiService.checkExistNews(id).next) {
+
+                newIndex = 0;
 
             } else  if(nav == 'prev' && yogiService.checkExistNews(id).prev){
+
                 newIndex = currentIndex - 1;
-                $scope.selectNews(localdata.feed[newIndex], newIndex);
+
+            } else if(nav == 'prev' && !yogiService.checkExistNews(id).prev){
+
+                newIndex = length - 1;
             }
+            $scope.selectNews(localdata.feed[newIndex], newIndex);
         };
         $scope.share = function (event, message, link, image) {
 
@@ -76,7 +88,9 @@ yogiApp.controller('ctrlDetail', ["$scope", "$location", "$rootScope", "yogiServ
         $scope.init = function() {
             $rootScope.menu.activate();
             $rootScope.menu.deactivate();
+
             console.log('feed', feed);
+
             //$("#custom-navbar").css('display','none');
             yogiService.setCurrentModule($scope.moduleName);
             ngProgress.start();
@@ -85,6 +99,7 @@ yogiApp.controller('ctrlDetail', ["$scope", "$location", "$rootScope", "yogiServ
             if ($scope.detailsData.length == 0) {
                 $rootScope.$broadcast("resetRoute");
             }
+            //console.log(feed.length);
             $scope.getViewportData();
             console.log('yogiService.setCurrentData(data);', yogiService.getCurrentData())
             console.error('$scope.detailsData.id', $scope.detailsData.id);
@@ -198,10 +213,8 @@ yogiApp.controller('ctrlDetail', ["$scope", "$location", "$rootScope", "yogiServ
 
         };
 
-
-
-
         var timeShowShare;
+
         $scope.showShare = function (show, event) {
             event.stopPropagation();
             $scope.shareToggle = show;
@@ -260,36 +273,24 @@ yogiApp.controller('ctrlDetail', ["$scope", "$location", "$rootScope", "yogiServ
         }
 
         $scope.actionSwipeUp = function(){
-            speakSelect("");
+
+            console.log("up");
+
             if ($scope.viewMode === 'minimize') {
                 $scope.changeNews('next');
-            }
+            };
+            speakSelect("");
         }
 
         $scope.actionSwipeDown = function(){
-            speakSelect("");
+
+            console.log("down");
+
             if ($scope.viewMode === 'minimize') {
                 $scope.changeNews('prev');
-            }
+            };
+            speakSelect("");
         };
-
-        var options = {
-            location: 'no',
-            clearcache: 'no',
-            toolbar: 'yes'
-        };
-
-
-        $scope.goAppstore = function()
-        {
-            var ref1 = cordova.InAppBrowser.open( 'https://www.google.com', '_blank', options);
-        };
-        $scope.goPlaystore = function()
-        {
-            var ref2 = cordova.InAppBrowser.open('https://www.google.com', '_blank', options);
-        };
-
-
 
         $scope.testShare = function(message, img, link){
             window.plugins.socialsharing.shareViaWhatsApp(message + '\n\n' + link, null, link, function() {

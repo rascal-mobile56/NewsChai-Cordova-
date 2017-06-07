@@ -6,22 +6,21 @@
 	ng-click="showShare(false, $event)"> <!--  -->
 
 		<div class="panel panel-default flex-col" ng-class="{'mode-minimize': viewMode == 'minimize', 'mode-full': viewMode == 'full'}" ng-style="{'border-color': detailsData.colorCode}" style="border-bottom-width: 5px;">
-
-			<div class="content-details" id="detail_content" >
+			<div class="details-padding" ng-if="isTextOnly"></div>
+            <div class="content-details" id="detail_content">
                 <!--<div class="panel-body content-details" id="detail_content" >-->
 				<div class="row">
-					<div class="back-mask" ng-if="!isTextOnly" id="category_image" >
+					<div class="" ng-if="!isTextOnly" id="category_image" >
                         <!--<div class="back-mask" ng-if="!isTextOnly" id="category_image"  style="background-image: url('images/background-image.png')" >-->
 						<div ng-if="!slides" class="container-image">
 							<img ng-if="!isTextOnly" class="detail-background" ng-src="{{imageLink || '//:0'}}" rel="prettyPhoto" />
-                            <img ng-if="!isTextOnly" class="detail-images" ng-src="{{imageLink || '//:0'}}" rel="prettyPhoto" />
 							<div  ng-show="videoLink" class="overlay-videolink" ng-click="showModal()">
 								<i class="fa fa-play-circle-o" aria-hidden="true"></i>
 							</div>
 						</div>
 						<slick  settings="slickConfig" ng-if="slickConfigLoaded && slides && !isTextOnly">
 							<div class="slide-main" ng-repeat="slide in slides.url ">
-								<div class=" response-img">
+								<div class="response-img">
 									<div class="container-img-slide">
 										<img ng-src="{{slide}}" width="100%">
 									</div>
@@ -42,13 +41,7 @@
 						<p ng-cloak>{{newsContent}} </p>
 					</div>
 				</div>
-                <!--<div class="row">-->
-                    <!--<div class="col-sm-11 col-md-11 col-lg-12" style="padding-top:10px;" >-->
-                        <!--<img class="logo-blue" src="images/logo-blue.png">-->
-                        <!--<img class="logo-store" src="images/appstore.png" ng-click="goAppstore()">-->
-                        <!--<img class="logo-store" src="images/googleplay.png" ng-click="goPlaystore()">-->
-                    <!--</div>-->
-                <!--</div>-->
+
 				<hr>
 				<div class="row">
 					<div class=" panel-date ">

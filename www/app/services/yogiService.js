@@ -131,8 +131,13 @@ yogiApp.service("yogiService", ["$cordovaSocialSharing","$http","$q", "$timeout"
                 });*/
                 // var httpRequest = this.httpRequestHandler(url, params, objParam, userHeaders);
                 this.httpRequestHandler(url, params, objParam, userHeaders).then(function (result) {
+
                     console.log("-----SUCCESS----------", result.data);
+
                     successCallback(result.data);
+                    console.log("-----Feed Length----------", result.data.feed.length);
+                    localStorage.setItem('length', result.data.feed.length);
+
                 },function (error) {
                     console.log("-----ERROR----------", error.data);
                     failureCallback(error.data);

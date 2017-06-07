@@ -7,16 +7,6 @@ yogiApp.directive("dirHeader", ["$location", "$rootScope", "$interval", "$templa
             templateUrl: "app/views/viewHeader.html",
             controller: function($scope, $location, $rootScope, yogiService, config) {
 
-               
-                   
-               // $('.btn-toggle').click(function() {
-               //         console.log('aa');
-               //         $(this).find('.btn').toggleClass('active');
-               //         if ($(this).find('.btn-primary').size() > 0) {
-               //             $(this).find('.btn').toggleClass('btn-default');
-                    
-               //         }
-               //      });
                 $rootScope.menu;
 
                 $scope.toggleTextMode = function(mode){
@@ -86,10 +76,16 @@ yogiApp.directive("dirHeader", ["$location", "$rootScope", "$interval", "$templa
                     //$rootScope.$broadcast("changeroute", data.catCode.toLowerCase());
                     //$(".navbar-toggle").trigger('click');
                 };
+                $scope.goHome = function() {
+                    $rootScope.menu.activate();
+                    $rootScope.menu.deactivate();
+                    $location.url('/home');
+                };
+
                 $scope.refresh = function(){
                     $scope.init();
                     $rootScope.$broadcast("refresh");
-                }
+                };
 
                 $scope.actionSwipeRight = function(event){
                     $rootScope.$broadcast("actionSwipeRight", {event: event});

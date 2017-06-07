@@ -6,10 +6,10 @@ yogiApp.controller('ctrlHome', ['$q', "$scope", "$location", "$rootScope", "yogi
 
         $scope.slickConfig = {
             dots: false,
-            //autoplay: true,
-            //autoplaySpeed: 10000,
-            //infinite: true,
-            //speed: 300,
+            autoplay: true,
+            autoplaySpeed: 10000,
+            infinite: true,
+            speed: 300,
             slidesToShow: 1,
             adaptiveHeight: true
         };
@@ -159,6 +159,7 @@ yogiApp.controller('ctrlHome', ['$q', "$scope", "$location", "$rootScope", "yogi
             $interval.cancel($rootScope.serviceTimer);
             //alert(result.refreshInt);
             $scope.serviceRefreshtimer = parseInt(result.refreshInt  * 1000 * 60);
+            console.log('serverRefresh timer: '+$scope.serviceRefreshtimer);
             $scope.initDataRefresh();
             //setTimeout($scope.checkViewOptions, 1000);
             $timeout(function() {
@@ -187,9 +188,13 @@ yogiApp.controller('ctrlHome', ['$q', "$scope", "$location", "$rootScope", "yogi
 
             yogiService.setCategoryIndex(index);
             yogiService.setCurrentData(data);
-            $rootScope.$broadcast("openDetails", data)
+
+            $rootScope.$broadcast("openDetails", data);
+
         };
-        $scope.selectNews = function(data, index) {;
+
+
+        $scope.selectNews = function(data, index) {
             if(typeof spinnerplugin !== 'undefined'){
                 spinnerplugin.show();
             }

@@ -2,7 +2,8 @@ yogiApp.service("config", function() {
     return {
         RESTURLS: {
             HOST: {
-                "BASE": "http://www.newsyogi.com/json"
+                //"BASE": "http://www.newsyogi.com/json"
+                "BASE": "http://www.newschai.com/json"
                 //"BASE": "data"
             },
             SUBURL: {

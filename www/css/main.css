@@ -730,30 +730,12 @@ footer {
     /* detail page css */
 
     .detail-background {
-        width: 150%;
-        margin-left: -25%;
-        height: 100%;
-        padding: 0;
-        -webkit-filter: blur(10px);
-        -moz-filter: blur(10px);
-        -o-filter: blur(10px);
-        -ms-filter: blur(10px);
-        filter: blur(5px);
-    }
-    .detail-images
-    {
         width: 100%;
-        position: absolute;
-        top: 50px
+        height: 36vh;
+        min-height: 120px;
+        padding: 0;
     }
-    .bb
-    {
-        -webkit-filter: blur(10px);
-        -moz-filter: blur(10px);
-        -o-filter: blur(10px);
-        -ms-filter: blur(10px);
-        filter: blur(5px);
-    }
+
 }
 @media only screen and (min-width: 360px) {
     /*.flexslider .slides > li {max-height:320px;}*/
@@ -1059,7 +1041,7 @@ footer {
     position: absolute;
     bottom: 0px;
     color: #fff;
-    /*background: rgba(102, 102, 102, 0.3);*/
+    background: rgba(102, 102, 102, 0.3);
 }
 #newsContent_area .panel {
     margin-bottom: 10px;
@@ -1211,7 +1193,10 @@ footer {
 }
 .slick-dots{
     /*position: relative;*/
-    bottom: -54px;
+    /*bottom: -54px;*/
+    bottom: 10px;
+    bottom: 10px;
+    left: 8px;
 }
 .slick-dotted.slick-slider{
     margin-bottom: 54px;
@@ -1634,6 +1619,12 @@ footer {
     text-decoration: none;
     margin: 0 45px 0 25px;
 }
+.sliding-menu .highlight
+{
+    font-size: 22px !important;
+    margin-right: 0;
+    margin-left: 60px;
+}
 
 .sliding-menu ul {
     list-style: none;
@@ -1724,8 +1715,63 @@ footer {
     left: 0px;
     top: 0px;
 }
-.back-mask
-{
-    width: calc(100% + 10px);
 
+.details-padding
+{
+    height: 50px;
+    width: 100%;
+}
+/*
+/**/
+.tutorial
+{
+    position: absolute;
+    bottom: 45px;
+    left: calc( 50% - 70px);
+}
+.tutorial button
+{
+    width: 140px;
+    height: 35px;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: rgb(38, 125, 255);
+    border: 1px solid rgb(90, 221, 255);
+    color: white;
+}
+
+
+/**/
+.main {
+    font-family:Arial;
+    width:500px;
+    display:block;
+    margin:0 auto;
+}
+.action{
+    display:block;
+    margin:100px auto;
+    width:100%;
+    text-align:center;
+}
+.action a {
+    display:inline-block;
+    padding:5px 10px;
+    background:#f30;
+    color:#fff;
+    text-decoration:none;
+}
+.action a:hover{
+    background:#000;
+}
+
+.slider {
+    width: 100vw;
+    margin: 0 auto;
+    margin-bottom: 0 !important;
+}
+
+.kk img {
+    width: 100vw;
+    height: 100vh;
 }

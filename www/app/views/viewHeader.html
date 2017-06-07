@@ -14,9 +14,12 @@
             <button class="btn btn-xs"  id="hide_images_home" ng-click="toggleTextMode(true)" >TXT</button>
         </div>
     </div>
-    <a class="navbar-brand" id="logo" alt="logo"></a>
+    <a class="navbar-brand" id="logo" alt="logo" ng-click="goHome()"></a>
     <div class="sliding-menu flex-center-wrapper flex-column left-menu">
         <ul>
+            <li>
+                <a ng-click="goHome()"><span style="background-color: rgb(5, 255, 23)"></span>HIGHLIGHTS</a>
+            </li>
             <li ng-repeat="data in headerData">
                 <a href="" ng-click="selectCategory(data)"><span ng-style="{'background-color': data.colorCode}"></span>{{data.displayName}}</a>
             </li>
@@ -30,6 +33,13 @@
                 </ul>
             </li>
         </ul>
+        <!--<div>-->
+            <!--<a class="highlight" ng-click="goHome()">HIGHLIGHTS</a>-->
+            <!--&lt;!&ndash;<div class="btn-group btn-toggle pull-right">&ndash;&gt;-->
+                <!--&lt;!&ndash;<button class="btn btn-xs"  id="show_images_home" ng-click="toggleTextMode(false)">IMG</button>&ndash;&gt;-->
+                <!--&lt;!&ndash;<button class="btn btn-xs"  id="hide_images_home" ng-click="toggleTextMode(true)" >TXT</button>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</div>-->
         <span class="menu-logo"></span>
         <span class="sliiider-exit exit left-exit">&#215</span>
     </div>
